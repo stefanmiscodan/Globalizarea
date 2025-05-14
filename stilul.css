@@ -1,0 +1,266 @@
+.navbar-brand {
+  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-left: 0;
+}
+.special-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.jumbotron {
+  background-image: url("star-2539245_960_720.jpg");
+  height: 860px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 150px 0;
+}
+.earth {
+  left: 0;
+  right: 0;
+  width: 350px;
+  height: 350px;
+  margin: 100px 0 250px auto;
+  background-image: url(earth3000x1500.png);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 100px 2px #000, inset 0 0 20px 2px #000;
+  animation-name: rotate;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.moon {
+  left: 0;
+  right: 0;
+  margin: 168px 0 20px 60px;
+  width: 120px;
+  height: 120px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZIXvz29SL99JGEzLsiGcr1-geF_byChGloC6d3c5omqP4avyO);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 100px 2px #000, inset 0 0 20px 2px #000;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 30s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.sun {
+  left: 0;
+  right: 0;
+  margin: 0 100px 100px 150px;
+  width: 168px;
+  height: 168px;
+  background-image: url(sun.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 100px 2px #ff7200, inset 0 0 40px 2px #ff7200;
+  animation-name: rotate;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 100s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+.paragraph {
+  font-family: "Comfortaa", serif;
+  font-size: 16px;
+  text-indent: 20px;
+  padding: 0;
+  margin: 0;
+}
+.paragraph2 {
+  font-family: "Comfortaa", serif;
+  font-size: 20px;
+  text-indent: 250px;
+  padding: 0;
+  margin: 0;
+}
+.paragraph3 {
+  font-family: "Comfortaa", serif;
+  font-size: 16 px;
+}
+.paragraph4 {
+  font-family: "Comfortaa", cursive;
+  font-size: 31px;
+  text-indent: 5px;
+  padding: 0;
+  margin: 0;
+}
+.paragraph5 {
+  font-family: "Comfortaa", serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+.paragraph6 {
+  font-family: "Comfortaa", serif;
+  font-size: 16px;
+}
+.paragraphsub {
+  font-family: "Comfortaa", serif;
+  font-size: 21px;
+  text-indent: 0;
+}
+.taga {
+  font-family: "Comfortaa", serif;
+  font-size: 20px;
+  text-decoration: none;
+}
+footer {
+  background: #43c6ac;
+  background: -webkit-linear-gradient(to right, #191654, #43c6ac);
+  background: linear-gradient(to right, #191654, #43c6ac);
+  color: #d5d5d5;
+}
+
+hr.light,
+hr.light-100 {
+  border-top: 1px solid #d5d5d5;
+  margin: 8rem, 1rem;
+}
+
+hr.light {
+  width: 75%;
+}
+
+hr.light-100 {
+  width: 100%;
+}
+
+hr.lenght-200 {
+  width: 200px;
+}
+.footerTextColor {
+  color: #d5d5d5;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-size: 30px;
+  text-indent: inherit;
+}
+footer ul {
+  list-style: none;
+}
+footer ul:first-of-type li {
+  text-indent: -50px;
+}
+footer ul li a,
+footer ul li a:hover {
+  color: #f6f6f6;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+.padding,
+footer {
+  padding-bottom: 2rem;
+}
+
+.paraFooter {
+  font-size: 25px;
+}
+
+.titleSocial {
+  padding-top: 50px;
+  font-family: Thasadith, sans-serif;
+}
+
+.paraCapitol {
+  font-family: Rajdhani, sans-serif;
+}
+
+.social a {
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+.fa-facebook-square {
+  color: #3b5998;
+}
+
+.fa-instagram {
+  color: #517fa4;
+}
+.fa-facebook-square:hover,
+.fa-instagram:hover {
+  color: #d5d5d5;
+}
+.eclipsestil {
+  font-family: "Comfortaa", serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  text-indent: 15px;
+}
+img {
+  margin-left: 140px;
+}
+.paragraphquiz {
+  font-family: "Comfortaa", serif;
+  text-indent: 40px;
+  font-size: 30px;
+}
+.miscimg {
+  width: 370px;
+  height: 370px;
+  margin-left: 0;
+  margin-top: 100px;
+}
+.fazelelunii {
+  width: 440px;
+  height: 370px;
+  margin-left: 53px;
+  margin-top: 30px;
+  border-radius: 20%;
+}
+.eclipse {
+  width: 400px;
+  height: 400px;
+  margin-left: 0;
+  margin-top: 100px;
+  border-radius: 13%;
+}
+.eclipse2 {
+  margin-top: 0;
+  border-radius: 13%;
+  margin-left: 43px;
+  width: 470px;
+  height: 400px;
+}
+audio:hover,
+audio:focus,
+audio:active {
+  -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.05);
+}
+audio {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -moz-box-shadow: 2px 2px 4px 0px #006773;
+  -webkit-box-shadow: 2px 2px 4px 0px #006773;
+  box-shadow: 2px 2px 4px 0px #006773;
+  -moz-border-radius: 50px 50px 50px 50px;
+  -webkit-border-radius: 50px 50px 50px 50px;
+  border-radius: 50px 50px 50px 50px;
+  outline: none;
+}

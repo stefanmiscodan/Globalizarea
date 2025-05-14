@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stilul.css">
+    <title>Quiz</title>
+    <style>
+      body{
+      	font-size: 20px;
+      	font-family: sans-serif;
+      	color: #333;
+      }
+      .question{
+      	font-weight: 600;
+        margin-top: 50px;
+      }
+      .answers {
+          margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="container">
+  <h1 align="center">Chestionar</h1><hr>
+    <div id="quiz"></div>
+      <button id="submit" class="btn btn-success">Rezultate</button>
+      <br><br>
+      <div id="results"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script>
+      var myQuestions = [
+        {
+          question: "1.Miscarea de rotatie a Pamantului in jurul axei sale dureaza:",
+          answers: {
+            a: "365/366 de zile",
+            b: "24 de ore",
+            c: "11 luni"
+          },
+          correctAnswer: "a"
+        },
+        {
+          question: "2.Sensul rotatiei Pamantului in jurul axei sale este:",
+          answers: {
+            a: "de la vest catre est",
+            b: "de la est catre vest",
+            c: "de la est catre nord"
+          },
+          correctAnswer: "a"
+        },
+        {
+          question: "3.Miscarea Pamantului in jurul axei sale sau:",
+          answers: {
+            a: "miscarea de revolutie",
+            b: "miscarea de rotatie",
+            c: "miscarea axei"
+          },
+          correctAnswer: "b"
+        },
+        {
+          question: "4.Miscarea de rotatie a Pamantului are ca urmare:",
+          answers: {
+            a: "formarea anotimpurilor",
+            b: "formarea axelor",
+            c: "formarea zilelor si noptilor"
+          },
+          correctAnswer: "c"
+        },
+        {
+          question: "5.Miscarea Pamantului in jurul Soarelui se mai numeste si:",
+          answers: {
+            a: "miscarea de rotatie",
+            b: "miscarea de rotire",
+            c: "miscarea de revolutie"
+          },
+          correctAnswer: "c"
+        },
+        {
+          question: "6.Miscarea de revolutie a Pamantului dureaza:",
+          answers: {
+            a: "24 de ore",
+            b: "365 de zile si 6 ore/366 de zile",
+            c: "11 luni"
+          },
+          correctAnswer: "b"
+        },
+        {
+          question: "7.in urma miscarii de revolutie se formeaza:",
+          answers: {
+            a: "zilele",
+            b: "noptile",
+            c: "anotimpurile"
+          },
+          correctAnswer: "c"
+        },
+        {
+          question: "8.in timpul zilei, suprafata Pamantului..., iar noaptea...",
+          answers: {
+            a: "se incalzeste, se raceste",
+            b: "se raceste, se incalzeste",
+            c: "se roteste, se incalzeste"
+          },
+          correctAnswer: "a"
+        },
+        {
+          question: "9. 21 martie, ziua este egala cu noaptea, momentul numindu-se:",
+          answers: {
+            a: "echinoctiul de toamna",
+            b: "solstitiul de vara",
+            c: "echinoctiul de primavara"
+          },
+          correctAnswer: "c"
+        },
+        {
+          question: "10.Solstitiul de vara:",
+          answers: {
+            a: "21 iunie",
+            b: "1 iunie",
+            c: "23 iunie"
+          },
+          correctAnswer: "a"
+        },
+		 {
+          question: "11.Ziua este egala cu noaptea:",
+          answers: {
+            a: "23 septembrie - solstitiul de toamna",
+            b: "22 decembrie - echinoctiul de toamna",
+            c: "23 septembrie - echinoctiul de toamna"
+          },
+          correctAnswer: "c"
+        },
+		 {
+          question: "12.Cea mai lunga noapte din an este:",
+          answers: {
+            a: "22 iunie",
+            b: "22 decembrie",
+            c: "22 mai"
+          },
+          correctAnswer: "b"
+        },
+		 {
+          question: "13.Un an in zona tarii noastre are:",
+          answers: {
+            a: "doua anotimpuri",
+            b: "patru anotimpuri",
+			c: "trei anotimpuri"
+          },
+          correctAnswer: "b"
+        },
+		 {
+          question: "14.Ziua polara dureaza:",
+          answers: {
+            a: "toata iarna",
+            b: "12 luni",
+            c: "6 luni"
+          },
+          correctAnswer: "c"
+        },
+		 {
+          question: "15.Recunoaste anotimpul: este foarte cald, razele soarelui sunt arzatoare, zilele sunt mai lungi, iar noptile mai scurte:",
+          answers: {
+            a: "iarna",
+            b: "primavara",
+			c: "vara"
+          },
+          correctAnswer: "c"
+        }
+      ];
+      var quizContainer = document.getElementById('quiz');
+      var resultsContainer = document.getElementById('results');
+      var submitButton = document.getElementById('submit');
+
+      function generateQuiz(questions, quizContainer, resultsContainer, submitButton) {
+      	function showQuestions(questions, quizContainer) {
+          var output = [];
+          var answers;
+          for(var i=0; i<questions.length; i++){
+            answers = [];
+          for(letter in questions[i].answers){
+            answers.push(
+              '<label>'
+                + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                + letter + ': '
+                + questions[i].answers[letter]
+              + '</label><br>'
+            );
+          }
+          output.push(
+            '<div class="question">' + questions[i].question + '</div>'
+            + '<div class="answers">' + answers.join('') + '</div>'
+            );
+          quizContainer.innerHTML = output.join('');
+          }
+      	}
+      	function showResults(questions, quizContainer, resultsContainer){
+          var answerContainers = quizContainer.querySelectorAll('.answers');
+        	var userAnswer = '';
+        	var numCorrect = 0;
+        	for(var i=0; i<questions.length; i++){
+        		userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+        		if(userAnswer===questions[i].correctAnswer){
+        			numCorrect++;
+              var text_quiz = "Ai avut " + numCorrect + " raspunsuri corecte din 15 !";
+              Swal.fire({
+                type: 'success',
+                title: 'Rezultate Quiz',
+                text: text_quiz,
+              });
+        		}
+        	}
+        	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+      	}
+      	showQuestions(questions, quizContainer);
+
+        submitButton.onclick = function(){
+        	showResults(questions, quizContainer, resultsContainer);
+        }
+    }
+    generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
