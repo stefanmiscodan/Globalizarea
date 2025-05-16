@@ -80,10 +80,11 @@
 }
 .paragraph {
   font-family: "Comfortaa", serif;
-  font-size: 16px;
+  font-size: 18px;
   text-indent: 20px;
   padding: 0;
   margin: 0;
+  row-gap: 7px;
 }
 .paragraph2 {
   font-family: "Comfortaa", serif;
@@ -101,7 +102,7 @@
   font-size: 31px;
   text-indent: 5px;
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
 }
 .paragraph5 {
   font-family: "Comfortaa", serif;
@@ -213,6 +214,7 @@ img {
   font-family: "Comfortaa", serif;
   text-indent: 40px;
   font-size: 30px;
+  margin-top: 70px;
 }
 .miscimg {
   width: 370px;
